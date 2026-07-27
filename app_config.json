@@ -1,0 +1,19 @@
+{
+  "packageName": "com.sufler.negotiation",
+  "name": "Negotiation Sufler",
+  "description": "AI суфлёр для деловых переговоров на очках Even G1/G2",
+  "permissions": [
+    {
+      "type": "MICROPHONE",
+      "description": "Распознавание речи для суфлёра"
+    }
+  ],
+  "settings": [
+    {
+      "key": "show_live_transcription",
+      "type": "toggle",
+      "label": "Показывать распознанный текст",
+      "default": true
+    }
+  ]
+}
