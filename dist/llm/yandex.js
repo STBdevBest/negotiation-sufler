@@ -1,12 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.sendToLLM = sendToLLM;
-exports.isLlmConfigured = isLlmConfigured;
-exports.clearConversation = clearConversation;
-const config_1 = require("../config");
+import { SYSTEM_PROMPT } from '../config.js';
 const YANDEX_API_BASE = 'https://llm.api.cloud.yandex.net/foundationModels/v1';
 let conversationHistory = [];
-async function sendToLLM(userMessage) {
+export async function sendToLLM(userMessage) {
     const apiKey = process.env.YANDEX_API_KEY;
     const folderId = process.env.YANDEX_FOLDER_ID;
     const modelId = process.env.YANDEX_MODEL_ID || 'yandexgpt-lite';
@@ -32,7 +27,7 @@ async function sendToLLM(userMessage) {
                 maxTokens: 200,
             },
             messages: [
-                { role: 'system', content: config_1.SYSTEM_PROMPT },
+                { role: 'system', content: SYSTEM_PROMPT },
                 ...conversationHistory,
             ],
         }),
@@ -48,10 +43,10 @@ async function sendToLLM(userMessage) {
     conversationHistory.push({ role: 'assistant', content: assistantText });
     return assistantText;
 }
-function isLlmConfigured() {
+export function isLlmConfigured() {
     return !!(process.env.YANDEX_API_KEY && process.env.YANDEX_FOLDER_ID);
 }
-function clearConversation() {
+export function clearConversation() {
     conversationHistory = [];
 }
 //# sourceMappingURL=yandex.js.map

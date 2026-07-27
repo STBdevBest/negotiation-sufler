@@ -1,6 +1,7 @@
 {
   "name": "negotiation-sufler",
   "version": "1.0.0",
+  "type": "module",
   "description": "AI negotiation coach for smart glasses (MentraOS)",
   "main": "dist/index.js",
   "scripts": {

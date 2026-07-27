@@ -1,4 +1,4 @@
-import { SYSTEM_PROMPT } from '../config';
+import { SYSTEM_PROMPT } from '../config.js';
 
 interface LlmMessage {
   role: 'system' | 'user' | 'assistant';

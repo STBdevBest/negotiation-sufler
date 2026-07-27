@@ -1,5 +1,5 @@
 import { AppServer, AppSession, ViewType } from '@mentra/sdk';
-import { sendToLLM, isLlmConfigured } from './llm/yandex';
+import { sendToLLM, isLlmConfigured } from './llm/yandex.js';
 
 const PACKAGE_NAME = process.env.PACKAGE_NAME ?? 'com.sufler.negotiation';
 const MENTRAOS_API_KEY = process.env.MENTRA_API_KEY ?? '';
